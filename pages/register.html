@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <section class="container">
+
+        <form id="register">
+            <h2 class="heading">Registrarse</h2>
+
+            <div class="input__box">
+                <div class="input__field">
+                    <input type="text" class="item" id="name" placeholder="Nombre" autocomplete="off" autofocus required />
+                    <div class="error__txt">El Nombre Completo no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+                <div class="input__field">
+                    <input type="text" class="item" id="lastname" placeholder="Apellidos" autocomplete="off" required />
+                    <div class="error__txt email">La Dirección de Email no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="input__box">
+                <div class="input__field">
+                    <input type="date" class="item" id="birthday" placeholder="Número de Telefono" autocomplete="off" required />
+                    <div class="error__txt">El Número de Telfono no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+                <div class="input__field">
+                    <input type="number" class="item" id="dni" placeholder="DNI" autocomplete="off" required />
+                    <div class="error__txt">El Asunto no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="input__field">
+                <input type="email" class="item" id="email" placeholder="Correo Electrónico" autocomplete="off" required />
+                <div class="error__txt">El Número de Telfono no puede estar vacío</div>
+                <span class="focus"></span>
+            </div>
+
+            <div class="input__box">
+                <div class="input__field">
+                    <input type="number" class="item" id="PC" placeholder="Código Postal" autocomplete="off" required />
+                    <div class="error__txt">El Asunto no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+
+                <div class="input__field">
+                    <input type="text" class="item" id="nick" placeholder="Nombre de Usuario" autocomplete="off" required />
+                    <div class="error__txt">El Asunto no puede estar vacío</div>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="input__field">
+                <input type="password" class="item" id="pass" placeholder="Contraseña" autocomplete="off" required />
+                <div class="error__txt">El Número de Telfono no puede estar vacío</div>
+                <span class="focus"></span>
+            </div>
+            <div class="input__field">
+                <input type="password" class="item" id="pass-verification" placeholder="Confirma la contraseña" autocomplete="off" required />
+                <div class="error__txt">El Número de Telfono no puede estar vacío</div>
+                <span class="focus"></span>
+            </div>
+
+            <div class="btn__box btns">
+                <button type="submit" class="btn">Registrar</button>
+            </div>
+
+            <div class="advice">
+                <p>¿Ya tienes una cuenta?</p>
+                <a href="/pages/login.html">Ingresar</a>
+            </div>
+
+        </form>
+    </section>
+    <script src="/js/register.js"></script>
+</body>
+
+</html>

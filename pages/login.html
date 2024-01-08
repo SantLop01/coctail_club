@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <section class="container">
+
+        <form id="login">
+            <h2 class="heading">Ingresar</h2>
+
+            <div class="input__field">
+                <input type="email" class="item" id="email" placeholder="Correo Electrónico" autocomplete="off" autofocus />
+                <div class="error__txt">El Nombre Completo no puede estar vacío</div>
+                <span class="focus"></span>
+            </div>
+            <div class="input__field">
+                <input type="password" class="item" id="password" placeholder="Contraseña" autocomplete="off" />
+                <div class="error__txt email">La Dirección de Email no puede estar vacío</div>
+                <span class="focus"></span>
+            </div>
+
+            <div class="btn__box btns">
+                <button type="submit" class="btn">Iniciar Sesión</button>
+            </div>
+
+            <div class="advice">
+                <p>¿No tienes una cuenta?</p>
+                <a href="/pages/register.html">Regístrate</a>
+            </div>
+        </form>
+    </section>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>
