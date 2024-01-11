@@ -95,6 +95,6 @@ postalCode.addEventListener('change', (e) => {
         poblation.value = population;
     } else {
         let knows = Object.keys(postalCodes).map(key => `0${key}`).join(', ');
-        return nofitifcation(`Las poblaciones conocidas en base a los códigos postales son: ${knows}`, 4000, '#155724', '#d4edda');
+        return nofitifcation(`Las poblaciones conocidas en base a los códigos postales son: ${knows}`, 4000, '#004085', '#cce5ff');
     }
 });
