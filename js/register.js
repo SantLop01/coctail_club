@@ -49,7 +49,7 @@ register.addEventListener('submit', (e) => {
         pass: pass
     });
     localStorage.setItem('users', JSON.stringify(users));
-    nofitifcation('Usuario registrado con exito', 1200, "#004085", "#cce5ff");
+    nofitifcation('¡Usuario registrado con exito!', 1200, "#155724", "#d4edda");
     setTimeout(() => {
         window.location.href = 'login.html'
     }, 1200)
@@ -95,6 +95,6 @@ postalCode.addEventListener('change', (e) => {
         poblation.value = population;
     } else {
         let knows = Object.keys(postalCodes).map(key => `0${key}`).join(', ');
-        return nofitifcation(`Las poblaciones concidas en base a los códigos postales son: ${knows}`, 4000, '#155724', '#d4edda');
+        return nofitifcation(`Las poblaciones conocidas en base a los códigos postales son: ${knows}`, 4000, '#155724', '#d4edda');
     }
 });
