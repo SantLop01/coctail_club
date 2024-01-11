@@ -7,7 +7,7 @@ loginForm.addEventListener('submit', (e) => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const isRegister = users.find(user => user.email === email && user.pass === password);
     if(!isRegister) {
-        return alert('Email o Contraseña incorrectos');
+        return alert('Email y/o Contraseña incorrectos');
     }
     localStorage.setItem('login_sucess', JSON.stringify(isRegister));
     alert(`Bienvenido ${isRegister.name}`);

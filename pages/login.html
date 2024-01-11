@@ -9,13 +9,17 @@
 </head>
 
 <body>
-    <section class="container">
-
-        <form id="login">
-            <h2 class="heading">Ingresar</h2>
+    <header>
+        <picture class="logo__contaier">
+            <img src="../img/logo.png" alt="Logo de Coctail Club">
+        </picture>
+    </header>
+    <main class="container">
+        <form class="login__form" id="login">
+            <h2 class="heading">Iniciar Sesión</h2>
 
             <div class="input__field">
-                <input type="email" class="item" id="email" placeholder="Correo Electrónico" autocomplete="off" autofocus />
+                <input type="email" class="item" id="email" placeholder="Email" autocomplete="off" autofocus />
                 <div class="error__txt">El Nombre Completo no puede estar vacío</div>
                 <span class="focus"></span>
             </div>
@@ -26,16 +30,32 @@
             </div>
 
             <div class="btn__box btns">
-                <button type="submit" class="btn">Iniciar Sesión</button>
+                <button type="submit" class="btn__login">Continuar</button>
             </div>
 
             <div class="advice">
-                <p>¿No tienes una cuenta?</p>
-                <a href="/pages/register.html">Regístrate</a>
+                <span>Al continuar, aceptas las <a>Condiciones de uso y venta</a> de Cocktail Club. Consulta el <a>Aviso de privacidad</a>, el <a>Aviso de cookies</a>.</span>
             </div>
         </form>
-    </section>
-    <script src="/js/login.js"></script>
+        <div class="have__account">
+            <hr>
+            <p>¿Eres nuevo en Cocktail Club?</p>
+            <a href="./register.html">Crea tu cuenta de Cocktail Club</a>
+        </div>
+    </main>
+    <footer>
+        <div class="social__container">
+            <a href=""><i class='bx bxl-facebook'></i></a>
+            <a href=""><i class='bx bxl-instagram'></i></a>
+            <a href=""><i class='bx bxl-twitter'></i></a>
+        </div>
+        <div class="info__pages">
+            <span>Aviso Legal</span>
+            <span>Política de privacidad</span>
+            <span>Política de cookies</span>
+        </div>
+    </footer>
+    <script type="module" src="/js/login.js"></script>
 </body>
 
 </html>

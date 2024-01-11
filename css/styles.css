@@ -1,14 +1,19 @@
 /* FONTS */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300&family=Poppins:wght@300&display=swap');
+
+/* BOXICONS */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
 
 /* VARIABLES */
 
 :root {
-    --primary-bg-color: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(102, 16, 242, 1) 100%, rgba(102, 16, 242, 1) 100%, rgba(9, 114, 115, 1) 100%);
-    --secondary-bg-color: #181A21;
-    --text-color: #ededed;
-    --main-color: #6610f2;
+    --primary-bg-color: #FFFEFE;
+    --secondary-bg-color: #DCE3F5;
+    --text-color: #000;
+    --main-color: #869BE6;
+    --main-font: 'League Spartan', sans-serif;
+    --alternative-font: 'Poppins', sans-serif;
 }
 
 /* NORMALIZE */
@@ -30,7 +35,6 @@ html {
 }
 
 body {
-    background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0);
     color: var(--text-color);
 }
 
@@ -53,8 +57,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-input[type="date"]:not(:focus) {
-    color: rgba(255, 255, 255, .3);
+/* HEADER STYLES */
+header {
+    padding: 0 9%;
+    margin-bottom: 6px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+header .logo__contaier {
+    display: flex;
+    justify-content: center;
+}
+
+.logo__contaier img {
+    max-width: 165px;
 }
 
 /* HOME STYLES */
@@ -64,12 +80,11 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-main {
+.main__container {
     display: grid;
     grid-template-columns: 20% 80%;
-    margin: 4rem;
+    margin: 10rem 9%;
     background: var(--secondary-bg-color);
-    box-shadow: 0 0.5px 0 1px rgba(255, 255, 255, 0.23) inset, 0 1px 0 0 rgba(255, 255, 255, 0.66) inset, 0 4px 16px rgba(0, 0, 0, 0.12);
     border-radius: 15px;
 }
 
@@ -175,8 +190,13 @@ main {
 .product__heading {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    overflow: hidden;
+    width: 100%;
+    font-size: 1.4em;
+    color: black;
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
 }
 
 .product__title {
@@ -206,40 +226,12 @@ main {
 
 .right__content {
     display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 2rem;
+    background-color: #f6f7fb;
+    border-radius: 15px;
     height: 100%;
-}
-
-/* Corregir */
-
-.heading {
-    position: relative;
-    font-size: 5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.btn__box .btn {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 4rem;
-    margin: 2rem 0;
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
-    border-radius: .8rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    color: var(--primary-bg-color);
-    cursor: pointer;
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s ease-in-out;
-}
-
-.btn__box .btn:hover {
-    scale: 1.1;
 }
 
 /* LOGIN PAGE STYLES */
@@ -247,44 +239,77 @@ main {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    padding: 10rem 9%;
     background: var(--primary-bg-color);
 }
 
-.container form {
-    padding: 2rem;
+.container .login__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 5rem;
     background: var(--secondary-bg-color);
     border-radius: 7px;
-    width: 600px;
+    width: 460px;
     text-align: center;
 }
 
-form .input__box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+form .heading {
+    position: relative;
+    font-size: 3em;
+    font-family: var(--main-font);
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.input__field {
     position: relative;
 }
 
-.input__box .input__field {
-    width: 48.5%;
+.input__field::placeholder {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input__field::after {
+    content: '*';
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 2em;
+    color: red;
 }
 
 .item {
+    position: relative;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 16px 22px;
     width: 100%;
-    padding: 10px;
-    background: transparent;
-    border: 1.6px solid var(--main-color);
+    background: #FFF;
     outline: none;
-    border-radius: 6px;
-    font-size: 16px;
-    color: #ededed;
-    margin: 12px 0;
 }
 
-.item::placeholder {
-    color: rgba(255, 255, 255, .3);
+.btn__box .btn__login {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 1rem;
+    width: 100%;
+    background: var(--main-color);
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    transition: .6s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn__box .btn__login:hover {
+    scale: 1.04;
 }
 
 form .advice {
@@ -297,17 +322,49 @@ form .advice {
 }
 
 form .advice a {
-    color: var(--main-color);
-    font-weight: 500;
-    padding: 1px 4px;
-    transition: .4s ease-in-out;
-    border: solid 1px var(--main-color);
-    border-radius: 0.4rem;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: .8px;
 }
 
-form .advice a:hover {
-    background: var(--main-color);
+.have__account {
+    display: flex;
+    flex-direction: column;
+    min-width: 360px;
+    margin-top: 5rem;
+}
+
+.have__account hr {
+    width: 100%;
+    height: 1px;
+    background: var(--text-color);
+}
+
+.have__account p {
+    font-size: 1.8em;
+    font-family: var(--main-font);
+    font-weight: 500;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.have__account a {
+    font-size: 1.8em;
+    font-family: var(--main-font);
+    font-weight: 500;
+    text-align: center;
     color: var(--text-color);
+    padding: 2rem 0;
+    width: 100%;
+    border: 1px solid #4268EE;
+    border-radius: 10px;
+    transition: .4s ease-in-out;
+}
+
+.have__account a:hover {
+    background: #4268EE;
+    color: #FFF;
+    scale: 1.04;
 }
 
 .item.error {
@@ -352,4 +409,101 @@ form .textarea__field .item {
 
 .contact form .textarea__field {
     position: relative;
+}
+
+/* FOOTER STYLES */
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 9%;
+    gap: 5rem;
+    margin-top: 6px;
+    box-shadow: 4px 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.social__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social__container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6em;
+    color: white;
+    padding: .6rem;
+    background: var(--text-color);
+    border-radius: 6px;
+    transition: .4s ease-in-out;
+}
+
+.social__container a:first-of-type:hover {
+    background: #4267B2;
+}
+
+.social__container a:nth-child(2):hover {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.social__container a:last-of-type:hover {
+    background: #00acee ;
+}
+
+.info__pages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.info__pages span {
+    font-size: 1.6em;
+    font-family: var(--main-font);
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* REGISTER PAGE STYLES */
+
+.container .register__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 5rem;
+    background: var(--secondary-bg-color);
+    border-radius: 7px;
+    width: 100%;
+    text-align: center;
+}
+
+.input__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.input__box .input__field {
+    width: 46%;
+}
+
+.btn__box .btn__register {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 1.6rem;
+    margin-top: 1.6rem;
+    width: 50%;
+    background: var(--main-color);
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    transition: .6s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn__box .btn__register:hover {
+    scale: 1.04;
 }
