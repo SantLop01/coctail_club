@@ -1,28 +1,39 @@
-import { showHTML, showHTML3 } from './template.js'
-import * as api from './api.js'
+import { showHTML, showHTML3 } from './template.js';
+import * as api from './api.js';
+import { nofitifcation } from './notify.js';
 
 const user = JSON.parse(localStorage.getItem('login_sucess')) || false;
 if (!user) {
     window.location.href = 'pages/login.html';
 }
 
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', () => {
-//     alert(`¡Hasta pronto ${user.name}!`);
-//     localStorage.removeItem('login_sucess');
-//     window.location.href = 'pages/login.html';
-// });
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', () => {
+    nofitifcation(`¡Hasta pronto ${user.name}!`, 1300, "#004085", "#cce5ff");
+    localStorage.removeItem('login_sucess');
+    setTimeout(() => {
+        window.location.href = 'pages/login.html';
+    }, 1400);
+});
+
+// Code for render a random drink
+const randomDrinkRender = async () => {
+    const drink = await api.getRandomDrink();
+    const drinksToShow = await drink.drinks;
+    console.log(drinksToShow);
+    categoriesRandom();
+    ingredientsRandom();
+    glassesRandom();
+    showHTML3(drinksToShow);
+}
+
+randomDrinkRender();
 
 // Code for generate Random Drink
 const random = document.querySelector('#random');
 
-random.addEventListener('click', async (e) => {
-    const drink = await api.getRandomDrink();
-    console.log(drink)
-    categoriesRandom();
-    ingredientsRandom();
-    glassesRandom();
-    showHTML(drink);
+random.addEventListener('click', async () => {
+    await randomDrinkRender();
 });
 
 // Constructor of options in Categories Select
@@ -125,15 +136,21 @@ glassSelect.addEventListener('change', async (e) => {
             break;
         }
     };
-    console.log('En ingredient selected', random);
-    const id = random.map(index => {
+
+    const ids = random.map(index => {
         return drinks[index].idDrink;
     });
 
-    const drink = await api.filterByIdDrink(id[0]);
+    let drinksToShow = [];
+
+    for (let id of ids) {
+        const drink = await api.filterByIdDrink(id);
+        drinksToShow.push(drink)
+    }
+
     categoriesRandom();
     ingredientsRandom();
-    showHTML(drink);
+    showHTML3(drinksToShow);
 });
 
 // Constructor of options in Ingredients Select
@@ -162,7 +179,6 @@ const ingredientsRandom = async () => {
 // Render by Ingredient Selected
 ingredientSelect.addEventListener('change', async (e) => {
     const { drinks } = await api.filterByIngredient(e.target.value);
-    console.log('FILTRADO POR INGREDIENTE', drinks.length);
     const quantity = drinks.length;
 
     let random = [];
@@ -177,13 +193,19 @@ ingredientSelect.addEventListener('change', async (e) => {
             break;
         }
     };
-    console.log('En ingredient selected', random);
-    const id = random.map(index => {
+
+    const ids = random.map(index => {
         return drinks[index].idDrink;
     });
 
-    const drink = await api.filterByIdDrink(id[0]);
+    let drinksToShow = [];
+
+    for (let id of ids) {
+        const drink = await api.filterByIdDrink(id);
+        drinksToShow.push(drink);
+    }
+
     categoriesRandom();
     glassesRandom();
-    showHTML(drink);
+    showHTML3(drinksToShow);
 });

@@ -10,9 +10,14 @@
 
 <body>
     <header>
-        <picture class="logo__contaier">
-            <img src="../img/logo.png" alt="Logo de Coctail Club">
-        </picture>
+        <div class="header__wrap">
+            <picture class="logo__contaier">
+                <img src="../img/logo.png" alt="Logo de Coctail Club">
+            </picture>
+            <div class="btn__box">
+                <button class="btn__logout" id="logout">Logout</button> 
+            </div>
+        </div>
     </header>
     <main class="main__container">
         <aside class="filters">
@@ -53,7 +58,8 @@
                 </li>
             </ul>
         </aside>
-        <section class="content">
+        <section class="content__wrap">
+            <div class="content">
                 <article class="left__content">
                     <div class="product__heading">
                         <div class="product__title">
@@ -64,32 +70,24 @@
                                 alt="Imagen con el nombre del coctel">
                         </picture>
                     </div>
-                    <div class="info__text">
-                        <h4 class="info__title">Ingredientes:</h4>
-                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque
-                            similique impedit iusto atque corporis quos odio quibusdam accusantium. Adipisci nobis
-                            debitis aliquam ab nam reiciendis ratione placeat laudantium nemo.
-                            Quod sint magni quisquam assumenda corporis itaque pariatur quam culpa, eaque temporibus eum
-                            corrupti soluta impedit? Magni fugit temporibus eos, perspiciatis omnis placeat porro et
-                            alias veniam modi distinctio impedit.
-                        </p>
-                    </div>
-                </article>
+            </article>
             <div class="right__content">
                 <div class="info__text">
                     <h4 class="info__title">Ingredientes:</h4>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque similique
-                        impedit iusto atque corporis quos odio quibusdam accusantium. Adipisci nobis debitis aliquam ab
-                        nam reiciendis ratione placeat laudantium nemo.
-                        Quod sint magni quisquam assumenda corporis itaque pariatur quam culpa, eaque temporibus eum
-                        corrupti soluta impedit? Magni fugit temporibus eos, perspiciatis omnis placeat porro et alias
-                        veniam modi distinctio impedit.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis nobis fuga minima, eum, aperiam minus ea voluptatem consequatur recusandae totam corrupti nesciunt quibusdam, soluta aliquid odio ullam quo hic. Aperiam!
-                        Expedita tempora voluptatem architecto, illo, fuga exercitationem deserunt quo dolorum excepturi aut iusto necessitatibus eaque natus aperiam porro reprehenderit ratione autem laboriosam voluptas temporibus aliquam ipsa id vel. Temporibus, similique?
-                        Ab deleniti ducimus eum maiores saepe libero repudiandae, eos veniam suscipit voluptatum voluptatem praesentium necessitatibus facilis quidem laboriosam provident recusandae distinctio eligendi consequatur blanditiis! Odio earum dolor cupiditate similique dicta!
-                        Corrupti alias consectetur expedita tempore molestiae quod accusantium officiis aliquid corporis obcaecati ab placeat minus veniam adipisci quis vero, ratione minima ducimus suscipit modi dignissimos laboriosam deleniti quo vitae. In?
+                    <ul>
+                        <li>Ingrediente 1</li>
+                        <li>Ingrediente 2</li>
+                        <li>Ingrediente 3</li>
+                        <li>Ingrediente 4</li>
+                    </ul>
+                </div>
+                <div class="info__text">
+                    <h4 class="info__title">Ingredientes:</h4>
+                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque
+                        similique impedit iusto atque corporis quos odio quibusdam accusantium.
                     </p>
                 </div>
+            </div>
             </div>
         </section>
     </main>
@@ -106,6 +104,7 @@
         </div>
     </footer>
     <script type="module" src="js/index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>

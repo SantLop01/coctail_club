@@ -1,13 +1,15 @@
 const register = document.querySelector('#register');
+import { nofitifcation } from './notify.js';
 
 register.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.querySelector('#name').value;
     const lastname = document.querySelector('#lastname').value;
     const birthday = document.querySelector('#birthday').value;
-    const dni = document.querySelector('#dni').value;
     const email = document.querySelector('#email').value;
+    const dni = document.querySelector('#dni').value;
     const postalCode = document.querySelector('#postal').value;
+    const poblation = document.querySelector('#poblation').value;
     const nick = document.querySelector('#nick').value;
     const pass = document.querySelector('#pass').value;
     const passVerify = document.querySelector('#pass-verification').value;
@@ -20,30 +22,37 @@ register.addEventListener('submit', (e) => {
     const passVerification = validatePassword(pass);
     const passCoincidence = pass === passVerify;
     if (!nameVerification || !lastnameVerification) {
-        return alert(`${!nameVerification ? 'El campo Nombre' : 'El campo Apellidos'} solo debe contener letras`);
+        nofitifcation(`${!nameVerification ? 'El campo Nombre' : 'El campo Apellidos'} solo debe contener letras`);
+        return;
     }
-    if (!ageVerification || !birthday.length > 9) {
-        return alert(`${!ageVerification ? 'Debes ser mayor de edad' : 'Ingresa una fecha válida. EJ: 01/01/2000'}`);
+    if (!ageVerification) {
+        nofitifcation('¡Debes ser mayor de edad!');
+        return;
     }
     if (userVerification) {
-        return alert('Este correo electronico ya está registrado');
+        nofitifcation('Este correo electronico ya está registrado');
+        return;
     }
     if (!passVerification || !passCoincidence) {
-        return alert(`${!passVerification ? 'La contraseña debe tener al menos 8 caracteres con 2 números' : 'Las contraseñas no coinciden'}`);
+        nofitifcation(`${!passVerification ? 'La contraseña debe contener al menos 8 caracteres con dos números' : 'Las contraseñas no coinciden'}`);
+        return;
     }
     users.push({
         name: name,
         lastname: lastname,
         birthday: birthday,
-        dni: dni,
         email: email,
         postalCode: postalCode,
+        poblation: poblation,
+        dni: dni,
         nick: nick,
         pass: pass
     });
     localStorage.setItem('users', JSON.stringify(users));
-    alert('¡Registro Exitoso!');
-    window.location.href = 'login.html'
+    nofitifcation('Usuario registrado con exito', 1200, "#004085", "#cce5ff");
+    setTimeout(() => {
+        window.location.href = 'login.html'
+    }, 1200)
 });
 
 // Input Validation
@@ -67,3 +76,25 @@ const validatePassword = (password) => {
     }
     return true;
 }
+
+const postalCodes = {
+    8001: 1664507, 
+    8600: 16994,
+    8700: 19862,
+    8240: 78877
+};
+  
+
+const postalCode = document.querySelector('#postal');
+const poblation = document.querySelector('#poblation');
+
+postalCode.addEventListener('change', (e) => {
+    const code = parseInt(e.target.value);
+    const population = postalCodes[code];
+    if (population) {
+        poblation.value = population;
+    } else {
+        let knows = Object.keys(postalCodes).map(key => `0${key}`).join(', ');
+        return nofitifcation(`Las poblaciones concidas en base a los códigos postales son: ${knows}`, 4000, '#155724', '#d4edda');
+    }
+});

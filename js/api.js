@@ -4,8 +4,8 @@ export const getRandomDrink = async () => {
     try {
         const response = await fetch('http://www.thecocktaildb.com/api/json/v1/1/random.php');
         const data = await response.json();
-        const drink = data.drinks[0];
-        return drink;
+        // const drink = data.drinks[0];
+        return data;
     } catch (error) {
         console.log(`No se pudo traer la bebida aleatoria porque: ${error}`);
     }

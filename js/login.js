@@ -1,5 +1,7 @@
 const loginForm = document.querySelector('#login');
 
+import { nofitifcation } from './notify.js';
+
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.querySelector('#email').value;
@@ -7,9 +9,12 @@ loginForm.addEventListener('submit', (e) => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const isRegister = users.find(user => user.email === email && user.pass === password);
     if(!isRegister) {
-        return alert('Email y/o Contraseña incorrectos');
+        nofitifcation(`Credenciales incorrectas, por favor intentalo de nuevo`, 2200, "#721c24", "#f8d7da");
+        return;
     }
     localStorage.setItem('login_sucess', JSON.stringify(isRegister));
-    alert(`Bienvenido ${isRegister.name}`);
-    window.location.href = '../../index.html';
+    nofitifcation(`¡Bienvenido ${isRegister.name}!`, 1300, "#004085", "#cce5ff");
+    setTimeout(() => {
+        window.location.href = '../../index.html';
+    }, 1400)
 })
