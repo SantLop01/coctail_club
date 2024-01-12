@@ -1,4 +1,4 @@
-/* FONTS */
+/* GOOGLE FONTS */
 
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300&family=Poppins:wght@300&display=swap');
 
@@ -216,36 +216,11 @@ section {
     height: 100%;
 }
 
-.info__product {
-    display: grid;
-    grid-template-rows: 60% 40%;
-    background: #f6f7fb;
-    height: 100%;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.product__heading {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-size: 1.4em;
-    color: black;
-    padding: 8px 12px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
-}
-
 .product__title {
-    font-size: 1.4em;
+    font-size: 1.8em;
+    text-align: center;
     font-weight: 600;
     color: black;
-}
-
-.image__wrap img {
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 .info__text {
@@ -259,8 +234,6 @@ section {
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 3px;
 }
-
-/* RIGHT CONTENT */
 
 .right__content {
     display: flex;
@@ -407,48 +380,47 @@ form .advice a {
     scale: 1.04;
 }
 
-.item.error {
-    border: 2px solid #d93025;
-}
+/* REGISTER PAGE STYLES */
 
-.error__txt {
-    font-size: 14.5px;
-    color: #d93025;
-    text-align: left;
-    margin: -5px 0 10px;
-    display: none;
-}
-
-.input__field.error .error__txt,
-.textarea__field.error .error__txt {
-    display: block;
-}
-
-form .textarea__field .item {
-    resize: none;
-}
-
-.contact form .focus {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
+.container .register__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 5rem;
     background: var(--secondary-bg-color);
-    border-radius: .6rem;
-    z-index: -1;
-    transition: .5s;
-}
-
-.contact form .input__box .input__field input:focus~.focus,
-.contact form .input__box .input__field input:valid~.focus,
-.contact form .textarea__field textarea:focus~.focus,
-.contact form .textarea__field textarea:valid~.focus {
+    border-radius: 7px;
     width: 100%;
+    text-align: center;
 }
 
-.contact form .textarea__field {
+.input__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     position: relative;
+}
+
+.input__box .input__field {
+    width: 46%;
+}
+
+.btn__box .btn__register {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 1.6rem;
+    margin-top: 1.6rem;
+    width: 50%;
+    background: var(--main-color);
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    transition: .6s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btn__box .btn__register:hover {
+    scale: 1.04;
 }
 
 /* FOOTER STYLES */
@@ -503,47 +475,4 @@ footer {
     font-weight: 400;
     color: var(--text-color);
     text-align: center;
-}
-
-/* REGISTER PAGE STYLES */
-
-.container .register__form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    padding: 5rem;
-    background: var(--secondary-bg-color);
-    border-radius: 7px;
-    width: 100%;
-    text-align: center;
-}
-
-.input__box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
-}
-
-.input__box .input__field {
-    width: 46%;
-}
-
-.btn__box .btn__register {
-    font-size: 1.5em;
-    font-weight: 400;
-    color: var(--text-color);
-    padding: 1.6rem;
-    margin-top: 1.6rem;
-    width: 50%;
-    background: var(--main-color);
-    border: 1px solid #FFF;
-    border-radius: 10px;
-    transition: .6s ease-in-out;
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.btn__box .btn__register:hover {
-    scale: 1.04;
 }

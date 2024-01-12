@@ -231,7 +231,7 @@ const logoutFunction = (logout) => {
 
     // Si no está logueado hacemos la redirección a login
     if (!user) {
-        window.location.href = '/pages/login.html';
+        window.location.href = '/html/login.html';
     };
 
     // Manejador para cerrar sesión
@@ -244,7 +244,7 @@ const logoutFunction = (logout) => {
 
         // Redireccionamos a la pagina de login
         setTimeout(() => {
-            window.location.href = '/pages/login.html';
+            window.location.href = '/html/login.html';
         }, 1400);
     });
 }
