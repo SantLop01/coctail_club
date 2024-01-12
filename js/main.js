@@ -62,7 +62,7 @@ const loginFunctions = (loginForm) => {
             // Notficamos el login exitoso con unos milisegundos antes de la redirección
             nofitifcation(`¡Bienvenido ${isRegister.name}!`, 1300, "#004085", "#cce5ff");
             setTimeout(() => {
-                window.location.href = '../../index.html';
+                window.location.href = '../index.html';
             }, 1400);
         });
     } catch (error) {
@@ -231,7 +231,7 @@ const logoutFunction = (logout) => {
 
     // Si no está logueado hacemos la redirección a login
     if (!user) {
-        window.location.href = '/html/login.html';
+        window.location.href = './html/login.html';
     };
 
     // Manejador para cerrar sesión
@@ -244,7 +244,7 @@ const logoutFunction = (logout) => {
 
         // Redireccionamos a la pagina de login
         setTimeout(() => {
-            window.location.href = '/html/login.html';
+            window.location.href = './html/login.html';
         }, 1400);
     });
 }
